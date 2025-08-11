@@ -326,11 +326,6 @@ Function get-DLHealthReport
         [boolean]$errorMembersOnly = $false,
         [Parameter(Mandatory = $false)]
         [boolean]$includeVerboseOutput = $true,
-        #Define parameters for multi-threaded operations
-        [Parameter(Mandatory = $false)]
-        [int]$threadNumberAssigned=0,
-        [Parameter(Mandatory = $false)]
-        [int]$totalThreadCount=0,
         #Definte parameters for pre-collected permissions
         [Parameter(Mandatory = $false)]
         [boolean]$useCollectedFullMailboxAccessOnPrem=$FALSE,
@@ -868,6 +863,8 @@ Function get-DLHealthReport
     Out-LogFile -string "Calling new-msGraphPowershellSession to create new connection to msGraph active directory."
 
     new-msGraphPowershellSession -msGraphCertificateThumbprint $msGraphCertificateThumbprint -msGraphApplicationID $msGraphApplicationID -msGraphTenantID $msGraphTenantID -msGraphEnvironmentName $msGraphEnvironmentName -msGraphScopesRequired $msGraphScopesRequired -msGraphClientSecret $msGraphClientSecret
+
+    validate-GraphContext -msGraphScopesRequired $msGraphScopesRequired
 
     #Establish powershell session to the global catalog server.
 
