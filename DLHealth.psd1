@@ -58,7 +58,7 @@ RequiredModules = @(@{ModuleName = 'Microsoft.Graph.Authentication'; ModuleVersi
                @{ModuleName = 'Microsoft.Graph.Groups'; ModuleVersion = '2.41.2'; }, 
                @{ModuleName = 'PSWriteHTML'; ModuleVersion = '1.41.0'; }, 
                @{ModuleName = 'PowerShellGet'; ModuleVersion = '2.2.5'; }, 
-               @{ModuleName = 'DLHierarchy'; ModuleVersion = '1.9.33'; }, 
+               @{ModuleName = 'DLHierarchy'; ModuleVersion = '1.9.35'; }, 
                'ActiveDirectory')
 
 # Assemblies that must be loaded prior to importing this module
